@@ -1,0 +1,10 @@
+package br.com.kauedb.web_printer_handler;
+
+/**
+ * Created by Kaue
+ */
+public interface PrintTemplate {
+
+    String build();
+
+}
