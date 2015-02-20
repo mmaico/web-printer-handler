@@ -5,4 +5,6 @@ package br.com.kauedb.web_printer_handler;
  */
 public interface PrinterHandler {
     void print();
+    void print(String printName);
+    
 }

@@ -3,6 +3,7 @@ package br.com.kauedb.web_printer_handler;
 import javax.print.*;
 import javax.print.attribute.HashDocAttributeSet;
 import javax.print.attribute.standard.MediaPrintableArea;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
@@ -12,6 +13,7 @@ import java.io.InputStream;
 public class ArgoxPrinterHandler implements PrinterHandler {
 
     private final PrintTemplate printTemplate;
+    protected static final String NAME_DEFAULT_PRINTER = "Argox";
 
     public ArgoxPrinterHandler(final PrintTemplate printTemplate) {
         this.printTemplate = printTemplate;
@@ -19,8 +21,13 @@ public class ArgoxPrinterHandler implements PrinterHandler {
 
     @Override
     public void print() {
+    	print(NAME_DEFAULT_PRINTER);
+        
+    }
 
-        final PrintService printService = PrintServiceFactory.getInstance().getPrintServiceByName("Argox");
+	@Override
+	public void print(String printName) {
+		final PrintService printService = PrintServiceFactory.getInstance().getPrintServiceByName(printName);
 
         final String printing = printTemplate.build();
 
@@ -38,8 +45,7 @@ public class ArgoxPrinterHandler implements PrinterHandler {
         } catch (PrintException e) {
             e.printStackTrace();
         }
-
-    }
+	}
 
 
 }
