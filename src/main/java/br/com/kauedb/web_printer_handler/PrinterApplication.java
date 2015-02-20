@@ -12,6 +12,7 @@ public class PrinterApplication extends Applet implements Application {
 	
 	private StringBuilder template = new StringBuilder("");
 	private String printerName = ArgoxPrinterHandler.NAME_DEFAULT_PRINTER;
+	
     @Override
     public void start() {
         sendPrintToArgox();
@@ -31,9 +32,8 @@ public class PrinterApplication extends Applet implements Application {
         sendPrintToArgox(personName, company, position, supplier);
     }
     
-    public String append(String partialTemplate) {
-    	template.append(partialTemplate);
-    	return template.toString();
+    public void append(String templateParam) {
+    	template.append(templateParam);
     }
     
     public void print() {
