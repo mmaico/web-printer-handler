@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jnlp spec='7.0' href='launch.jnlp' version='1.0'>
+  <information>
+    <title>web-printer-handler</title>
+    <vendor>web-printer-handler</vendor>
+  </information>
+  <security>
+    <all-permissions />
+  </security>
+  <resources>
+    <j2se version='1.7' />
+    <jar href='lib/web-printer-handler.jar' version='1.0' />
+    <property name='jnlp.versionEnabled' value='true' />
+  </resources>
+  <application-desc main-class='null' />
+</jnlp>

@@ -13,6 +13,9 @@ buildscript {
         classpath 'de.gliderpilot.gradle.jnlp:gradle-jnlp-plugin:+'
     }
 }
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
 
 apply plugin: 'de.gliderpilot.jnlp'
 
